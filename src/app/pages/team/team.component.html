@@ -1,0 +1,14 @@
+<div class="row animate__animated animate__fadeIn" *ngIf="myTeam">
+    <div class="col text-center">
+        <img [src]="myTeam.logo" [alt]="myTeam.nombre">
+        <br>
+        <button class="btn btn-outline-danger btn-block mt-2" (click)="goBack()">Volver</button>
+    </div>
+    <div class="col">
+        <h2>{{ myTeam.nombre }}</h2>
+        <hr>
+        <h3>Liga <span>{{ myTeam.liga }}</span></h3>
+        <h4>{{ myTeam.anio }}</h4>
+        <p>{{ myTeam.descripcion }}</p>
+    </div>
+</div>

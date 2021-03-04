@@ -1,0 +1,11 @@
+<div class="card-columns animate__animated animate__fadeIn">
+  <div class="card animate__animated animate__fadeIn animated__faster" *ngFor="let team of teams">
+    <img [src]="team.logo" class="card-img-top" height="150px" alt="team.nombre">
+    <div class="card-body">
+      <h5 class="card-title">{{ team.nombre }}</h5>
+      <p class="card-text">{{ team.descripcion | slice:0:100}}...</p>
+      <p class="card-text"><small class="text-muted">Desde {{ team.anio }}</small></p>
+      <a class="btn btn-outline-primary btn-block" routerLink="/team/{{team.id}}">Ver mas...</a>
+    </div>
+  </div>
+</div>

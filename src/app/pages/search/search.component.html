@@ -1,0 +1,22 @@
+<div class="row animate__animated animate__fadeIn">
+    <div class="col">
+        <h2>Buscaste a: <small>{{ busqueda }}</small></h2>
+        <hr>
+
+        <div class="alert alert-primary animate__animated animate__flipInX" role="alert" *ngIf="teams.length == 0">
+            No hay resultados para {{ busqueda }}
+        </div>
+        
+        <div class="card-columns">
+            <div class="card" *ngFor="let team of teams">
+                <img [src]="team.logo" class="card-img-top" height="150px" [alt]="team.nombre">
+                <div class="card-body">
+                    <h5 class="card-title">{{ team.nombre }}</h5>
+                    <p class="card-text">{{ team.descripcion | slice:0:100 }}</p>
+                    <p class="card-text"><small class="text-muted">Desde {{ team.anio }}</small></p>
+                    <a class="btn btn-outline-primary btn-block" routerLink="/team/{{team.id}}">Ver mas...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
